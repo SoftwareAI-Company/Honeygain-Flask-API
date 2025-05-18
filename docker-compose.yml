@@ -1,0 +1,14 @@
+
+services:
+  honeygain_flask_app:
+    build: .
+    volumes:
+      - .:/app  
+    restart: always
+    ports:
+      - "5320:5320"
+    command: >
+      sh -c "python api.py"
+    mem_limit: 500MB
+    cpus: "1.25"   
+
